@@ -1,424 +1,88 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="bpaas-design-system" content="editorial-apple">
-    <meta name="bpaas-design-theme" content="kr-ivory-ink">
-    <title>신도림 가라오케 예약 | 정보 - 당신의 밤을 위한 유일한 선택</title>
-    <meta name="description" content="신도림 가라오케 예약, 당신의 밤을 바꿀 선택. 20년 경력의 프리미엄 사운드, 와인과 함께하는 럭셔리 보컬 체험. 지금 전화 예약 010-6279-0862, 단 3분 만에 확정.">
-    <meta name="keywords" content="신도림가라오케, 신도림가라오케예약, 신도림노래방, 신도림파티룸, 신도림프라이빗가라오케, 신도림고급가라오케, 신도림룸가라오케">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://t3b07-sd-karaoke-rsv.vercel.app/">
-    <meta property="og:title" content="신도림 가라오케 예약 | 당신의 밤을 위한 유일한 선택">
-    <meta property="og:description" content="신도림 가라오케 예약, 당신의 밤을 바꿀 선택. 20년 경력의 프리미엄 사운드, 와인과 함께하는 럭셔리 보컬 체험. 지금 전화 예약 010-6279-0862, 단 3분 만에 확정.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://t3b07-sd-karaoke-rsv.vercel.app/">
-    <style>
-        /* Reset & Base */
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px;
-        }
-        body {
-            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: #faf7f2;
-            color: #1e1e1e;
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-        /* Typography */
-        h1, h2, h3, h4 {
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-        }
-        h1 {
-            font-size: 3.5rem;
-            margin-bottom: 0.5rem;
-        }
-        h2 {
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
-            border-left: 6px solid #b59a6b;
-            padding-left: 1rem;
-        }
-        h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.75rem;
-        }
-        p {
-            margin-bottom: 1.25rem;
-            font-size: 1.05rem;
-        }
-        a {
-            color: #1e1e1e;
-            text-decoration: underline;
-            text-underline-offset: 3px;
-            transition: color 0.2s;
-        }
-        a:hover {
-            color: #b59a6b;
-        }
-        /* Drop Cap */
-        .drop-cap::first-letter {
-            font-size: 4.2rem;
-            font-weight: 700;
-            float: left;
-            line-height: 1;
-            margin-right: 12px;
-            margin-top: 4px;
-            color: #b59a6b;
-            font-family: 'Times New Roman', serif;
-        }
-        /* Hero */
-        .hero {
-            background: linear-gradient(145deg, #1e1e1e 0%, #2b2b2b 100%);
-            color: #faf7f2;
-            padding: 5rem 0 4rem;
-            margin-bottom: 3rem;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero::after {
-            content: "SINDORIM";
-            position: absolute;
-            bottom: -20px;
-            right: -20px;
-            font-size: 12rem;
-            font-weight: 900;
-            color: rgba(255, 255, 255, 0.03);
-            letter-spacing: 0.1em;
-            pointer-events: none;
-            line-height: 1;
-        }
-        .hero h1 {
-            font-size: 4rem;
-            max-width: 800px;
-            position: relative;
-            z-index: 2;
-        }
-        .hero p {
-            font-size: 1.3rem;
-            opacity: 0.85;
-            max-width: 650px;
-            margin-top: 1rem;
-            position: relative;
-            z-index: 2;
-        }
-        .hero .tel-link {
-            display: inline-block;
-            margin-top: 1.8rem;
-            background: #b59a6b;
-            color: #1e1e1e;
-            padding: 0.9rem 2.4rem;
-            font-weight: 700;
-            font-size: 1.5rem;
-            border-radius: 60px;
-            text-decoration: none;
-            transition: background 0.2s, transform 0.2s;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-            position: relative;
-            z-index: 2;
-        }
-        .hero .tel-link:hover {
-            background: #d4b87a;
-            transform: scale(1.02);
-            color: #1e1e1e;
-        }
-        /* Navigation */
-        nav {
-            background: #ffffff;
-            border-bottom: 1px solid #e8e3da;
-            padding: 0.8rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(4px);
-            background: rgba(255,255,255,0.95);
-        }
-        .nav-wrap {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-        }
-        .nav-links a {
-            font-weight: 600;
-            text-decoration: none;
-            font-size: 1.05rem;
-            letter-spacing: 0.3px;
-            padding: 0.3rem 0;
-            border-bottom: 2px solid transparent;
-            transition: border-color 0.2s;
-        }
-        .nav-links a:hover {
-            border-bottom-color: #b59a6b;
-        }
-        .hamburger-menu {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 2rem;
-            cursor: pointer;
-            padding: 0.2rem 0.6rem;
-            color: #1e1e1e;
-        }
-        .tel-highlight a {
-            font-weight: 700;
-            background: #b59a6b;
-            color: #1e1e1e !important;
-            padding: 0.4rem 1.2rem;
-            border-radius: 40px;
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: background 0.2s;
-        }
-        .tel-highlight a:hover {
-            background: #d4b87a;
-        }
-        /* Card & Section */
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-        .card {
-            background: #ffffff;
-            padding: 2rem 1.8rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
-            border: 1px solid #ede8e0;
-            transition: transform 0.25s ease, box-shadow 0.3s;
-        }
-        .card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 18px 36px rgba(0,0,0,0.08);
-        }
-        .card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 0.8rem;
-        }
-        .card p {
-            font-size: 1rem;
-            color: #3a3a3a;
-        }
-        .card .highlight {
-            font-weight: 700;
-            color: #b59a6b;
-        }
-        .info-block {
-            background: #ffffff;
-            border-radius: 24px;
-            padding: 2.5rem;
-            margin: 3rem 0;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.02);
-            border: 1px solid #eae5dd;
-        }
-        .info-block ul {
-            list-style: none;
-            margin: 1.2rem 0;
-        }
-        .info-block li {
-            padding: 0.5rem 0;
-            font-size: 1.05rem;
-            border-bottom: 1px dashed #e0dbd2;
-            display: flex;
-            align-items: baseline;
-        }
-        .info-block li::before {
-            content: "▸";
-            color: #b59a6b;
-            font-weight: 700;
-            margin-right: 12px;
-        }
-        .faq-item {
-            padding: 1.2rem 0;
-            border-bottom: 1px solid #e0dbd2;
-        }
-        .faq-item strong {
-            display: block;
-            font-size: 1.15rem;
-            margin-bottom: 0.3rem;
-        }
-        .faq-item p {
-            margin-bottom: 0;
-            color: #444;
-        }
-        .cta-section {
-            background: #1e1e1e;
-            color: #faf7f2;
-            padding: 3.5rem 2rem;
-            border-radius: 32px;
-            text-align: center;
-            margin: 4rem 0;
-        }
-        .cta-section h2 {
-            border-left: none;
-            font-size: 2.6rem;
-            margin-bottom: 0.8rem;
-        }
-        .cta-section .tel-link {
-            display: inline-block;
-            background: #b59a6b;
-            color: #1e1e1e;
-            padding: 1rem 3rem;
-            font-weight: 700;
-            font-size: 2rem;
-            border-radius: 60px;
-            text-decoration: none;
-            margin-top: 1.6rem;
-            transition: background 0.2s, transform 0.2s;
-        }
-        .cta-section .tel-link:hover {
-            background: #d4b87a;
-            transform: scale(1.02);
-        }
-        /* responsive-768 */
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 16px;
-            }
-            h1 {
-                font-size: 2.3rem;
-            }
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            .hero {
-                padding: 3rem 0 2.5rem;
-            }
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                background: #ffffff;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                padding: 1.5rem 2rem;
-                box-shadow: 0 20px 30px rgba(0,0,0,0.05);
-                border-top: 1px solid #e8e3da;
-            }
-            .nav-links.active {
-                display: flex;
-            }
-            .hamburger-menu {
-                display: block;
-            }
-            .tel-highlight {
-                margin-left: auto;
-                margin-right: 0.5rem;
-            }
-            .card-grid {
-                grid-template-columns: 1fr;
-            }
-            .cta-section h2 {
-                font-size: 2rem;
-            }
-            .cta-section .tel-link {
-                font-size: 1.5rem;
-                padding: 0.8rem 2rem;
-            }
-            .hero .tel-link {
-                font-size: 1.2rem;
-                padding: 0.7rem 1.8rem;
-            }
-        }
-        @media (min-width: 769px) {
-            .nav-links {
-                display: flex !important;
-            }
-        }
-        /* footer */
-        footer {
-            border-top: 1px solid #e0dbd2;
-            padding: 2rem 0;
-            margin-top: 4rem;
-            text-align: center;
-            color: #5a5a5a;
-            font-size: 0.9rem;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>신도림 가라오케 예약 – 정보</title>
+  <meta name="description" content="신도림 가라오케 예약을 앞두고 실무 담당자가 반드시 확인해야 할 상세 정보와 체크리스트를 제공합니다.">
+  <meta name="keywords" content="신도림 가라오케, 예약 정보, 실무 체크리스트, 인원 변동 대비, 정산 가이드">
+  <link rel="canonical" href="https://sindorim-song-trend.namanavi.com/about.html">
+  <meta property="og:title" content="신도림 가라오케 예약 – 정보">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sindorim-song-trend.namanavi.com/about.html">
+  <meta property="og:description" content="신도림 가라오케 예약 전 담당자를 위한 필수 정보와 사전 점검 요소를 상세히 안내합니다.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="신도림 가라오케 예약 – 정보">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <header>
+    <nav class="r-nav-e1vx">
+      <ul>
+        <li class="r-item-9g0j"><a href="/intro">소개</a></li>
+        <li class="r-item-9g0j"><a href="/checklist">체크리스트</a></li>
+        <li class="r-item-9g0j"><a href="/info">정보</a></li>
+        <li class="r-item-9g0j"><a href="/contact">연락처</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<nav>
-    <div class="container nav-wrap">
-        <button class="hamburger-menu" aria-label="메뉴 열기" onclick="this.nextElementSibling.classList.toggle('active')">☰</button>
-        <ul class="nav-links">
-            <li><a href="/">홈</a></li>
-            <li><a href="/info">정보</a></li>
-            <li><a href="/reservation">예약</a></li>
-            <li><a href="/review">후기</a></li>
-            <li><a href="/contact">문의</a></li>
-        </ul>
-        <div class="tel-highlight"><a href="tel:010-6279-0862">010-6279-0862</a></div>
-    </div>
-</nav>
+  <main>
+    <!-- 페이지 헤드 -->
+    <section class="t-txt-47s5">
+      <h1>신도림 가라오케 예약 – 상세 정보</h1>
+      <p>신도림 지역 내 가라오케 시설을 예약하려는 담당자는 사전 준비 단계에서 다각적인 검토가 필요합니다. 본 페이지는 실무 담당자가 현장에서 발생할 수 있는 변수들을 체계적으로 관리하도록 설계되었습니다.</p>
+      <p>편리한 예약 진행을 위해 기본적인 시설 정보, 운영 정책, 그리고 예약 전 반드시 확인해야 할 사항들을 구체적으로 제시합니다. 이를 통해 현장의 혼선과 비용 초과를 최소화할 수 있습니다.</p>
+    </section>
 
-<section class="hero">
-    <div class="container">
-        <h1>신도림 가라오케<br>예약의 모든 것</h1>
-        <p>럭셔리 프라이빗 사운드, 와인 페어링, 20년 내공. <br>당신의 밤을 업그레이드할 단 하나의 장소.</p>
-        <a href="tel:010-6279-0862" class="tel-link">지금 예약 010-6279-0862</a>
-    </div>
-</section>
+    <!-- 인원 변동 대비 전략 -->
+    <section class="t-txt-chyi">
+      <h2>인원 변동 시 대응 전략</h2>
+      <p>예약 후 실시간으로 인원 변동이 발생할 경우, 사전에 정의한 대응 매뉴얼에 따라 빠르게 조정해야 합니다. 인원 증감에 따른 방 배정, 마이크 및 음향 장비 추가 여부, 그리고 최소 인원 유지 조건을 명확히 파악해 두는 것이 중요합니다.</p>
+      <p>특히, 인원 감소가 예측될 경우 취소 정책과 환불 절차를 사전에 검토하고, 최소 예약 인원 이하로 감소할 경우 대체 예약 옵션을 제시할 수 있도록 협력 업체와 사전 협의를 진행하십시오.</p>
+    </section>
 
-<main class="container">
-    <h2>정보 · 신도림 가라오케 예약</h2>
-    <p class="drop-cap">신도림에서 가장 완벽한 사운드와 프라이버시를 원한다면, 여기. 우리는 '그냥 노래방'이 아니다. 20년 동안 단 하나의 룸, 단 하나의 마이크에 집중해왔다. 와인 한 잔과 함께 불러본 적 있는가? 오늘 밤, 당신의 목소리가 프리미엄이 되는 순간.</p>
+    <!-- 사전 점검 체크리스트 -->
+    <section class="t-txt-47s5">
+      <h2>예약 전 사전 점검 체크리스트</h2>
+      <p>예약을 확정하기 전에 반드시 확인해야 할 핵심 항목은 다음과 같습니다. 첫째, 시설의 방 크기와 수용 인원 제한을 파악하고, 예약하려는 방의 유형(노래방, 프라이빗 룸 등)과 장비 구성을 확인합니다.</p>
+      <p>둘째, 운영 시간과 연장 비용 정책을 검토하고, 예약 시간대와 겹치는 다른 이벤트가 없는지 확인합니다. 셋째, 결제 방법 및 선불/후불 옵션을 명확히 하여 정산 시 발생할 수 있는 분쟁을 사전에 차단합니다.</p>
+    </section>
 
-    <div class="card-grid">
-        <div class="card">
-            <h3>사운드</h3>
-            <p><span class="highlight">JBL KXi 12</span> + 파워드 서브우퍼. 2000W 출력. 보컬 리버브는 아날로그 콘솔로 직접 튜닝. 당신의 음색이 가라앉지 않는다.</p>
-        </div>
-        <div class="card">
-            <h3>와인 &amp; 위스키</h3>
-            <p>셰프가 엄선한 <span class="highlight">6종 페어링</span>. 까베르네 소비뇽, 샤도네이, 혼술 위스키까지. 룸 서비스는 3분 이내.</p>
-        </div>
-        <div class="card">
-            <h3>프라이빗</h3>
-            <p>룸마다 방음 3중 구조. <span class="highlight">VIP 룸</span>은 전용 라운지 + 스모크 타워. 당신의 시간은 완전히 차단된다.</p>
-        </div>
-    </div>
+    <!-- 정산 및 사후 관리 -->
+    <section class="t-txt-chyi">
+      <h2>정산 및 사후 관리</h2>
+      <p>예약 종료 후에는 정확한 정산이 필수적입니다. 실제 사용 시간, 추가 주문(음료·음식·장비 대여) 및 인원 변동에 따른 비용 변동을 모두 기록하고, 사전 합의된 정산 표준에 따라 청구서를 발행합니다.</p>
+      <p>정산이 완료된 이후에는 고객 만족도 조사와 함께 시설 이용 후기, 발생한 이슈 및 개선점을 내부 보고서로 정리합니다. 이러한 데이터를 기반으로 차기 예약 시 서비스 품질을 향상시킬 수 있습니다.</p>
+    </section>
 
-    <div class="info-block">
-        <h3>예약 전 확인사항</h3>
-        <ul>
-            <li>예약은 <strong>전화 010-6279-0862</strong>로만 가능 (3분 확정)</li>
-            <li>운영 시간: 매일 18:00 ~ 익일 03:00 (주말 05:00)</li>
-            <li>최소 2인 / 최대 8인 (프리미엄 룸 기준)</li>
-            <li>와인 패키지 사전 요청 가능 (입고 상황에 따라 변동)</li>
-            <li>노쇼(No-show) 발생 시 다음 예약 제한</li>
-        </ul>
-    </div>
+    <!-- 카드형 정보 제공 -->
+    <section class="v-card-vlz0">
+      <a href="/faq">
+        <h3>FAQ</h3>
+        <p>예약 관련 자주 묻는 질문과 답변을 한눈에 확인하세요.</p>
+      </a>
+    </section>
+    <section class="v-card-vlz0">
+      <a href="/policy">
+        <h3>취소·환불 정책</h3>
+        <p>예상치 못한 상황에 대비한 취소 및 환불 절차를 상세히 안내합니다.</p>
+      </a>
+    </section>
 
-    <div class="info-block">
-        <h3>FAQ — 당신이 묻는 모든 것</h3>
-        <div class="faq-item">
-            <strong>Q. 신도림역에서 어떻게 가나요?</strong>
-            <p>신도림역 4번 출구에서 도보 7분. 건물 전용 주차 2대 가능 (발렛). 네비게이션: 신도림로 42길 17-3.</p>
-        </div>
-        <div class="faq-item">
-            <strong>Q. 노래방 기기와 곡은?</strong>
-            <
+    <!-- FAQ 섹션 -->
+    <section class="t-txt-47s5">
+      <h2>자주 묻는 질문 (FAQ)</h2>
+      <p><strong>Q1. 예약 취소 시 환불은 언제까지 가능한가요?</strong><br>
+      예약일 기준 24시간 이전에 취소하면 전액 환불이 가능하며, 24시간 이내 취소 시에는 50% 환불 정책이 적용됩니다. 단, 특별 이벤트와 프로모션 예약은 별도 규정이 적용될 수 있습니다.</p>
+      <p><strong>Q2. 초과 인원에 대한 추가 비용은 어떻게 계산되나요?</strong><br>
+      기본 인원 초과 시 1인당 10,000원의 추가 요금이 부과됩니다. 단, 인원 초과가 2인 미만일 경우에는 사전 협의에 따라 비용을 면제하거나 조정할 수 있습니다.</p>
+      <p><strong>Q3. 음향 장비를 별도로 대여할 수 있나요?</strong><br>
+      마이크와 무선 스피커는 사전 예약 시 옵션으로 선택 가능하며, 추가 비용은 장비 종류와 대여 시간에 따라 차등 부과됩니다. 상세 가격표는 예약 페이지 하단에 별도 제공됩니다.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 신도림 가라오케 예약 안내. All rights reserved.</p>
+  </footer>
 </body>
 </html>
